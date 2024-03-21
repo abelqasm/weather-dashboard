@@ -1,5 +1,5 @@
 import { WeatherResponse } from "../../entities";
-import WeatherIcon from "./WeatherIcon";
+import WeatherIcon from "./weather-details/WeatherIcon";
 import Humidity from "./weather-details/Humidity";
 import WindSpeed from "./weather-details/WindSpeed";
 import Pressure from "./weather-details/Pressure";

@@ -1,15 +1,15 @@
-import Time from "./time-dashboard/Time";
-import WeatherDashboard from "./weather/WeatherDashboard";
-import DailyWeather from "./weather/DailyWeather";
-import useWeather from "../hooks/useWeather";
+import Time from "../time-dashboard/Time";
+import DailyWeather from "../weather/DailyWeather";
+import useLocalWeather from "../../hooks/useLocalWeather";
+import WeatherDashboard from "../weather/WeatherDashboard";
 
 interface Props {
   long: number;
   lat: number;
 }
 
-const WeatherContainer = ({ long, lat }: Props) => {
-  const { isLoading, data: weather, error } = useWeather(lat, long);
+const LocalContainer = ({ long, lat }: Props) => {
+  const { isLoading, data: weather, error } = useLocalWeather(lat, long);
   if (isLoading) return <></>;
   if (error) {
     return <p>error occured </p>;
@@ -25,4 +25,4 @@ const WeatherContainer = ({ long, lat }: Props) => {
   );
 };
 
-export default WeatherContainer;
+export default LocalContainer;

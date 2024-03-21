@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { WeatherResponse } from "../entities";
 import axios from "axios";
+import { apiKey } from "../constants";
+import { AxiosError } from "axios";
 
-const apiKey = "d75d5ac64ff74be5b9c112832242103";
 
-const useWeather = (latitude: number, longitude: number) =>
-  useQuery<WeatherResponse>({
+const useLocalWeather = (latitude: number, longitude: number) =>
+  useQuery<WeatherResponse, AxiosError>({
     queryKey: ["weather"],
     queryFn: () =>
       axios
@@ -16,4 +17,4 @@ const useWeather = (latitude: number, longitude: number) =>
         .then((res) => res.data),
   });
 
-export default useWeather;
+export default useLocalWeather;
