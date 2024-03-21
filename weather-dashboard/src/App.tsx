@@ -27,8 +27,8 @@ function App() {
   }, []);
   return (
     <>
-      <header className="text-center p-5">
-        <h1 className="text-3xl font-extrabold">Weather dashboard</h1>
+      <header className="flex justify-center p-5">
+        <h1 className="text-3xl p-5 px-10 text-white shadow-lg shadow-gray-600 rounded-xl font-extrabold bg-gray-700">Weather dashboard</h1>
       </header>
       <main className="flex flex-col p-14 gap-10">
         {coord.length > 0 && (
